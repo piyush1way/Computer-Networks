@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FDMA</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var nums = [20,5,8,9]
+			var i = 0
+			var int = setInterval(function(){
+
+				var col = '<div class="col">'
+				for (j = 0; j < 4; j++) {
+					if (i < nums[j]) {
+						col += '<div class="block b' + j + '"></div>'
+					} else {
+						col += '<div class="block"></div>'
+					}
+				}
+
+				col += '</div>'
+				
+				// $('.container').append(
+				// 	'<div class="col">' +
+				// 	'<div class="block b0"></div>' +
+				// 	'<div class="block b1"></div>' +
+				// 	'<div class="block b2"></div>' +
+				// 	'<div class="block b3"></div>' +
+				// 	'</div>'
+				// 	)
+				$('.container').append(col)
+				i++
+			}, 500)
+		})
+		
+	</script>
+
+	<style type="text/css">
+		.container {
+			position: relative;
+			/*width: 500px;*/
+			height: 100vh;
+		}
+		.col {
+			display: block;
+			float: left;
+			text-align: center;
+			width: 50px;
+			height: 100%;
+			margin: 0px 2px;
+		}
+		.col:nth-child(2) > .col {
+			background-color: yellow;
+		}
+		p {
+			margin: 10px 0px;
+		}
+		.block {
+			display: block;
+			height: 30px;
+			width: 100%;
+			/*margin: 5px 0px;*/
+		}
+		.b0 {
+			background-color: red;
+		}
+		.b1 {
+			background-color: #fc0;
+		}
+		.b2 {
+			background-color: green;
+		}
+		.b3 {
+			background-color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>FDMA</h1>
+	<h3>Frequency division multiple access</h3>
+	<div class="container">
+		<div class="col">
+			<p>freq1</p>
+			<p>freq2</p>
+			<p>freq3</p>
+			<p>freq4</p>
+		</div>
+
+		<!-- <div class="col"><p>B</p></div>
+		<div class="col"><p>C</p></div>
+		<div class="col"><p>D</p></div> -->
+	</div>
+</body>
+</html>

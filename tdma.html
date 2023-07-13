@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TDMA</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var nums = [20,5,8,9]
+			var i = 0
+			var int = setInterval(function(){
+				var iter = (i%4)
+
+				if ((i/4) < nums[iter]) {
+					$('.col').eq(iter).append('<div class="block b'+ iter +'"></div>')
+				}
+
+				i++
+			}, 500)
+			// $('.container').append('<div class="block red"></div>')
+		})
+		
+	</script>
+
+	<style type="text/css">
+		.container {
+			position: relative;
+			width: 500px;
+			height: 100vh;
+		}
+		.col {
+			display: inline-block;
+			text-align: center;
+			width: 20%;
+			height: 100%
+		}
+		.block {
+			display: block;
+			height: 30px;
+			width: 100%;
+			margin: 5px 0px;
+		}
+		.b0 {
+			background-color: red;
+		}
+		.b1 {
+			background-color: #fc0;
+		}
+		.b2 {
+			background-color: green;
+		}
+		.b3 {
+			background-color: blue;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>TDMA</h1>
+	<h3>Time division multiple access</h3>
+	<div class="container">
+		<div class="col"><p>A</p></div>
+		<div class="col"><p>B</p></div>
+		<div class="col"><p>C</p></div>
+		<div class="col"><p>D</p></div>
+	</div>
+</body>
+</html>
